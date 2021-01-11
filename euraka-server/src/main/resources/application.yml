@@ -1,0 +1,18 @@
+server:
+  port: 8761 #指定该Eureka实例的端口
+
+eureka:
+  instance:
+    hostname: localhost #设置当前实例的主机名称
+  client:
+    registerWithEureka: false #禁止注册自身
+    fetchRegistry: false  #因为该服务没有注册到其他注册中心，所以关闭从注册中心拉取服务列表。
+    serviceUrl:  #服务注册中心地址
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
+
+#eureka是一个高可用的组件，它没有后端缓存，每一个实例注册之后需要向注册中心发送心跳（因此可以在内存中完成）
+#通过eureka.client.registerWithEureka：false和fetchRegistry：false来表明自己是一个eureka server.
+#
