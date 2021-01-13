@@ -1,18 +1,18 @@
 server:
-  port: 8761 #Ö¸¶¨¸ÃEurekaÊµÀıµÄ¶Ë¿Ú
+  port: 8761 #æŒ‡å®šè¯¥Eurekaå®ä¾‹çš„ç«¯å£
 
 eureka:
   instance:
-    hostname: localhost #ÉèÖÃµ±Ç°ÊµÀıµÄÖ÷»úÃû³Æ
+    hostname: localhost #è®¾ç½®å½“å‰å®ä¾‹çš„ä¸»æœºåç§°
   client:
-    registerWithEureka: false #½ûÖ¹×¢²á×ÔÉí
-    fetchRegistry: false  #ÒòÎª¸Ã·şÎñÃ»ÓĞ×¢²áµ½ÆäËû×¢²áÖĞĞÄ£¬ËùÒÔ¹Ø±Õ´Ó×¢²áÖĞĞÄÀ­È¡·şÎñÁĞ±í¡£
-    serviceUrl:  #·şÎñ×¢²áÖĞĞÄµØÖ·
+    registerWithEureka: false #ç¦æ­¢æ³¨å†Œè‡ªèº«
+    fetchRegistry: false  #å› ä¸ºè¯¥æœåŠ¡æ²¡æœ‰æ³¨å†Œåˆ°å…¶ä»–æ³¨å†Œä¸­å¿ƒï¼Œæ‰€ä»¥å…³é—­ä»æ³¨å†Œä¸­å¿ƒæ‹‰å–æœåŠ¡åˆ—è¡¨ã€‚
+    serviceUrl:  #æœåŠ¡æ³¨å†Œä¸­å¿ƒåœ°å€
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 
 
 
-#eurekaÊÇÒ»¸ö¸ß¿ÉÓÃµÄ×é¼ş£¬ËüÃ»ÓĞºó¶Ë»º´æ£¬Ã¿Ò»¸öÊµÀı×¢²áÖ®ºóĞèÒªÏò×¢²áÖĞĞÄ·¢ËÍĞÄÌø£¨Òò´Ë¿ÉÒÔÔÚÄÚ´æÖĞÍê³É£©
-#Í¨¹ıeureka.client.registerWithEureka£ºfalseºÍfetchRegistry£ºfalseÀ´±íÃ÷×Ô¼ºÊÇÒ»¸öeureka server.
+#eurekaæ˜¯ä¸€ä¸ªé«˜å¯ç”¨çš„ç»„ä»¶ï¼Œå®ƒæ²¡æœ‰åç«¯ç¼“å­˜ï¼Œæ¯ä¸€ä¸ªå®ä¾‹æ³¨å†Œä¹‹åéœ€è¦å‘æ³¨å†Œä¸­å¿ƒå‘é€å¿ƒè·³ï¼ˆå› æ­¤å¯ä»¥åœ¨å†…å­˜ä¸­å®Œæˆï¼‰
+#é€šè¿‡eureka.client.registerWithEurekaï¼šfalseå’ŒfetchRegistryï¼šfalseæ¥è¡¨æ˜è‡ªå·±æ˜¯ä¸€ä¸ªeureka server.
 #
