@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     @RequestMapping("/service/hello")
     public String hello() {
-        System.out.println("这是服务提供者01！！！！！！！！！！！！！！！！");
-        return "Hello, Spring Clould,Client 01!";
+        System.out.println("这是服务提供者02！！！！！！！！！！！！！！！！");
+        return "Hello, Spring Clould,Client 02!";
     }
 
 

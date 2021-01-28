@@ -6,8 +6,8 @@ eureka:
     lease-renewal-interval-in-seconds: 2 #每间隔2s，向服务端发送一次心跳，证明自己依然“存活”
     lease-expiration-duration-in-seconds: 4 #告诉服务端，如果我30s之内没有发送心跳，代表我故障了，将我剔除
 server:
-  port: 8762
+  port: 8766
 spring:
   application:
     #    此处名称最好写项目名称，便于识别服务提供者
-    name: eureka-client-01
+    name: eureka-consumer
