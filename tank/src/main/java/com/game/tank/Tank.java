@@ -3,14 +3,14 @@ package main.java.com.game.tank;
 import java.awt.*;
 
 /**
- * @Description:
+ * @Description: 坦克实体类
  * @Author: haole
  * @Date: 2021/7/4 13:23
  */
 public class Tank {
     private int x, y;
     private Dir dir = Dir.DOWN;
-    private static final int SPEED = 10;
+    private static final int SPEED = 5;
     private boolean moving = false;
 
     public Tank(int x, int y, Dir dir) {
