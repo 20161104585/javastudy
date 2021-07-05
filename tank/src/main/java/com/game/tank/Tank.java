@@ -55,7 +55,7 @@ public class Tank {
 
 
     public void fire() {
-        tf.bullectList.add(new Bullect(this.x, this.y, this.dir,this.tf));
+        tf.bullectList.add(new Bullect(this.x + 12, this.y + 12, this.dir, this.tf));
     }
 
     public int getX() {
