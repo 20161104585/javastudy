@@ -8,8 +8,9 @@ import java.awt.*;
  * @Date: 2021/7/4 14:00
  */
 public class Bullect {
-    private static final int SPEED = 10;
-    private static final int WIDTH = 20, HEIGHT = 20;
+    private static final int SPEED = 15;
+    public static final int WIDTH = ResourcrMgr.bulletD.getWidth(),
+            HEIGHT = ResourcrMgr.bulletD.getHeight();
 
     private boolean live = true;
     private int x, y;
@@ -28,10 +29,20 @@ public class Bullect {
         if(!live){
             tf.bullectList.remove(this);
         }
-        Color c = g.getColor();
-        g.setColor(Color.RED);
-        g.fillOval(x, y, WIDTH, HEIGHT);
-        g.setColor(c);
+        switch (dir) {
+            case LEFT:
+                g.drawImage(ResourcrMgr.bulletL, x, y, null);
+                break;
+            case UP:
+                g.drawImage(ResourcrMgr.bulletU, x, y, null);
+                break;
+            case RIGHT:
+                g.drawImage(ResourcrMgr.bulletR, x, y, null);
+                break;
+            case DOWN:
+                g.drawImage(ResourcrMgr.bulletD, x, y, null);
+                break;
+        }
         move();
     }
 
