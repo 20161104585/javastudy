@@ -1,6 +1,7 @@
 package main.java.com.game.tank;
 
 import java.awt.*;
+import java.util.Random;
 
 /**
  * @Description: 坦克实体类
@@ -14,19 +15,22 @@ public class Tank {
     public static final int WIDTH = ResourcrMgr.tankD.getWidth(),
             HEIGHT = ResourcrMgr.tankD.getHeight();
     private boolean living = true;
-    private boolean moving = false;
+    private boolean moving = true;
+    private Random random = new Random();
     private TankFrame tf = null;
+    private Group group = Group.BAD;
 
-    public Tank(int x, int y, Dir dir, TankFrame tf) {
+    public Tank(int x, int y, Dir dir, Group group, TankFrame tf) {
         super();
         this.x = x;
         this.y = y;
         this.dir = dir;
+        this.group = group;
         this.tf = tf;
     }
 
     public void paint(Graphics g) {
-        if(!living){
+        if (!living) {
             tf.tankList.remove(this);
         }
         switch (dir) {
@@ -68,13 +72,16 @@ public class Tank {
                 break;
 
         }
+        if (random.nextInt(10) > 8) {
+            this.fire();
+        }
     }
 
 
     public void fire() {
         int bX = this.x + Tank.WIDTH / 2 - Bullect.WIDTH / 2;
         int bY = this.y + Tank.HEIGHT / 2 - Bullect.HEIGHT / 2;
-        tf.bullectList.add(new Bullect(bX, bY, this.dir, this.tf));
+        tf.bullectList.add(new Bullect(bX, bY, this.dir, this.group, this.tf));
     }
 
     public int getX() {
@@ -111,6 +118,14 @@ public class Tank {
 
     public void setMoving(boolean moving) {
         this.moving = moving;
+    }
+
+    public Group getGroup() {
+        return group;
+    }
+
+    public void setGroup(Group group) {
+        this.group = group;
     }
 
     public void die() {

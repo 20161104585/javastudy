@@ -12,7 +12,7 @@ public class Main {
         TankFrame tf = new TankFrame();
 
         for (int i = 0; i < 5; i++) {
-            tf.tankList.add(new Tank(50 +i*50,50,Dir.DOWN,tf));
+            tf.tankList.add(new Tank(50 +i*50,50,Dir.DOWN,Group.BAD,tf));
         }
         while (true) {
             Thread.sleep(50);
